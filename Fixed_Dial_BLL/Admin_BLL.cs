@@ -16,10 +16,17 @@ namespace Fixed_Dial_BLL
 
         }
 
-        public void mediaManagement(string mediafileName, string mediaOriginalName, string mediaExtn, int mediaSize, DateTime CreatedDate)
+        public void mediaManagement(string mediafileName, string mediaOriginalName, string mediaExtn, int mediaSize, DateTime CreatedDate,int adminID)
         {
-            adminDataAccess.insertMediaDetails(mediafileName, mediaOriginalName, mediaExtn, mediaSize, CreatedDate);
+            adminDataAccess.insertMediaDetails(mediafileName, mediaOriginalName, mediaExtn, mediaSize, CreatedDate, adminID);
 
+        }
+
+        public int adminMail(string aMail)
+        {
+           int aID = adminDataAccess.adminInfo(aMail);
+
+            return aID;
         }
     }
 }

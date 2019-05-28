@@ -32,9 +32,35 @@ namespace Fixed_Dial_DAL
             }
         }
 
-        
+        public int adminInfo(string aMail)
+        {
+            using (SqlCommand sqlCommand = new SqlCommand("getAdminID", con))
+            {
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter())
+                {
+                    using (DataTable dataTable = new DataTable())
+                    {
+                        con.Open();
 
-        public void insertMediaDetails(string mediafileName, string mediaOriginalName, string mediaExtn,int mediaSize, DateTime CreatedDate)
+                        sqlCommand.Parameters.AddWithValue("@aMail", SqlDbType.VarChar).Value = aMail;
+                        
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
+                        sqlDataAdapter.SelectCommand = sqlCommand;
+
+
+                        currentAdminID = Convert.ToInt32(sqlCommand.ExecuteScalar());
+
+                        con.Close();
+                    }
+                }
+
+
+            }
+
+            return currentAdminID;
+        }
+
+        public void insertMediaDetails(string mediafileName, string mediaOriginalName, string mediaExtn,int mediaSize, DateTime CreatedDate,int adminID)
         {
             //DC.StoredProcedure = "nProc_InsertOrder";
 
@@ -57,9 +83,9 @@ namespace Fixed_Dial_DAL
                         sqlCommand.Parameters.AddWithValue("@mediaExtn", SqlDbType.VarChar).Value = mediaExtn;
                         sqlCommand.Parameters.AddWithValue("@mediaSize", SqlDbType.Int).Value = mediaSize;
                         sqlCommand.Parameters.AddWithValue("@CreatedDate", SqlDbType.DateTime).Value = CreatedDate;
-                        sqlCommand.Parameters.AddWithValue("@CreatedBy", SqlDbType.Int).Value = 1;
+                        sqlCommand.Parameters.AddWithValue("@CreatedBy", SqlDbType.Int).Value = adminID;
                         sqlCommand.Parameters.AddWithValue("UpdatedDate", SqlDbType.DateTime).Value = DateTime.Now;
-                        sqlCommand.Parameters.AddWithValue("@UpdatedBy", SqlDbType.Int).Value = 1;
+                        sqlCommand.Parameters.AddWithValue("@UpdatedBy", SqlDbType.Int).Value = adminID;
 
                         sqlCommand.CommandType = CommandType.StoredProcedure;
                         sqlDataAdapter.SelectCommand = sqlCommand;
@@ -102,7 +128,7 @@ namespace Fixed_Dial_DAL
                         sqlDataAdapter.SelectCommand = sqlCommand;
                         sqlDataAdapter.Fill(dataTable);
 
-                        currentAdminID = Convert.ToInt32(sqlCommand.ExecuteScalar());
+                        //currentAdminID = Convert.ToInt32(sqlCommand.ExecuteScalar());
 
                         con.Close();
                     }

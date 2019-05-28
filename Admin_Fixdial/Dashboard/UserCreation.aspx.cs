@@ -12,6 +12,7 @@ namespace Admin_Fixdial.Dashboard
     public partial class UserCreation : System.Web.UI.Page
     {
         Admin_BLL admin_BLL = new Admin_BLL();
+        Admin_BLL infoBl = new Admin_BLL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,6 +21,7 @@ namespace Admin_Fixdial.Dashboard
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            adminInfoPL();
             insertMedia();
             Admin_Creation();
             lblNotification.Text = "Admin Created Successfully.....!!!";
@@ -55,7 +57,15 @@ namespace Admin_Fixdial.Dashboard
 
             this.fileuploadImage.SaveAs(Path.Combine(directory, changeName));
 
-            admin_BLL.mediaManagement(changeName, oName, fExt, fSize, DateTime.Now);
+            int adminID = Convert.ToInt16(Cache["adminID"]);
+
+            admin_BLL.mediaManagement(changeName, oName, fExt, fSize, DateTime.Now,adminID);
+        }
+
+        void adminInfoPL()
+        {
+           int aID = infoBl.adminMail(Session["Login"].ToString());
+            Cache["adminID"] = aID; 
         }
     }
 }

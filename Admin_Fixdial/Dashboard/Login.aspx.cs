@@ -11,14 +11,16 @@ namespace Admin_Fixdial.Dashboard
     public partial class Login : System.Web.UI.Page
     {
         adminLoginBl adminLoginBl = new adminLoginBl();
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            
             adminLoginCheck();
         }
 
@@ -28,6 +30,8 @@ namespace Admin_Fixdial.Dashboard
 
             if(loginResult)
             {
+                Session["Login"] = txtMail.Text;
+
                 Response.Redirect("Home.aspx");
             }
             else
@@ -35,5 +39,7 @@ namespace Admin_Fixdial.Dashboard
                 lblNotification.Text = "Wrong Credentials...!!!";
             }
         }
+
+       
     }
 }
