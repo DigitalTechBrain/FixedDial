@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>SqlHelper\Bin\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -67,6 +71,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SqlHelper\Bin\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="SqlHelper\CS.aspx" />
+    <Content Include="SqlHelper\VB.aspx" />
+    <Content Include="SqlHelper\VB.aspx.vb" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -74,12 +82,17 @@
   <ItemGroup>
     <Compile Include="adminDAL.cs" />
     <Compile Include="adminLogin.cs" />
-    <Compile Include="DAC.cs" />
+    <Compile Include="CategoryManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLHelper.cs" />
+    <Compile Include="SqlHelper\CS.aspx.cs">
+      <DependentUpon>CS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="SqlHelper\Bin\Microsoft.ApplicationBlocks.Data.dll.refresh" />
+    <Content Include="SqlHelper\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

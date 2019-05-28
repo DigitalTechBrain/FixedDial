@@ -14,8 +14,7 @@ namespace Fixed_Dial_DAL
 
     public class adminDAL
     {
-        //DAC DC = new DAC();
-
+        
         public int currentMediaID;
         public int currentAdminID;
 
@@ -62,14 +61,7 @@ namespace Fixed_Dial_DAL
 
         public void insertMediaDetails(string mediafileName, string mediaOriginalName, string mediaExtn,int mediaSize, DateTime CreatedDate,int adminID)
         {
-            //DC.StoredProcedure = "nProc_InsertOrder";
-
-            //DC.Params.Add("@OrderId", SqlDbType.VarChar, "Order1");
-
-            //DC.Params.Add("@CustomerName", SqlDbType.VarChar, "test");
-
-            //DAC.Commands.Add(DC);
-
+            
             using (SqlCommand sqlCommand = new SqlCommand("mediaDetails", con))
             {
                 using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter())
@@ -89,7 +81,7 @@ namespace Fixed_Dial_DAL
 
                         sqlCommand.CommandType = CommandType.StoredProcedure;
                         sqlDataAdapter.SelectCommand = sqlCommand;
-                        //sqlDataAdapter.Fill(dataTable);
+                     
 
                         currentMediaID = Convert.ToInt32(sqlCommand.ExecuteScalar());
 
@@ -128,7 +120,7 @@ namespace Fixed_Dial_DAL
                         sqlDataAdapter.SelectCommand = sqlCommand;
                         sqlDataAdapter.Fill(dataTable);
 
-                        //currentAdminID = Convert.ToInt32(sqlCommand.ExecuteScalar());
+                      
 
                         con.Close();
                     }
