@@ -112,3 +112,4 @@ D:\Projects\Dot_Net\FixedDial\Fixed_Dial\Fixed_Dial_BLL\obj\Debug\Fixed_Dial_BLL
 D:\Projects\Dot_Net\FixedDial\Fixed_Dial\Fixed_Dial_BLL\bin\Fixed_Dial_DAL.dll
 D:\Projects\Dot_Net\FixedDial\Fixed_Dial\Fixed_Dial_BLL\bin\Fixed_Dial_DAL.pdb
 D:\Projects\Dot_Net\FixedDial\Fixed_Dial\Fixed_Dial_BLL\bin\Fixed_Dial_DAL.dll.config
+D:\Projects\Dot_Net\FixedDial\Fixed_Dial\Fixed_Dial_BLL\bin\Microsoft.ApplicationBlocks.Data.dll

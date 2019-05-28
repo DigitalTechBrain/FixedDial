@@ -54,3 +54,4 @@ D:\Projects\Dot_Net\FixedDial\Fixed_Dial\Fixed_Dial_DAL\obj\Debug\Fixed_Dial_DAL
 D:\Projects\Dot_Net\FixedDial\Fixed_Dial\Fixed_Dial_DAL\obj\Debug\Fixed_Dial_DAL.csproj.CopyComplete
 D:\Projects\Dot_Net\FixedDial\Fixed_Dial\Fixed_Dial_DAL\obj\Debug\Fixed_Dial_DAL.dll
 D:\Projects\Dot_Net\FixedDial\Fixed_Dial\Fixed_Dial_DAL\obj\Debug\Fixed_Dial_DAL.pdb
+D:\Projects\Dot_Net\FixedDial\Fixed_Dial\Fixed_Dial_DAL\bin\Microsoft.ApplicationBlocks.Data.dll
