@@ -471,7 +471,12 @@
     <Content Include="Dashboard\documentation\js\jstree.active.js" />
     <Content Include="Dashboard\documentation\js\jstree.min.js" />
     <Content Include="Dashboard\Home.aspx" />
+    <Content Include="Dashboard\Images\addnew.png" />
+    <Content Include="Dashboard\Images\cancel.png" />
+    <Content Include="Dashboard\Images\delete.png" />
+    <Content Include="Dashboard\Images\edit.png" />
     <Content Include="Dashboard\Images\logo.png" />
+    <Content Include="Dashboard\Images\save.png" />
     <Content Include="Dashboard\Login.aspx" />
     <Content Include="Dashboard\MicroCategory.aspx" />
     <Content Include="Dashboard\pages\404-page.html" />
