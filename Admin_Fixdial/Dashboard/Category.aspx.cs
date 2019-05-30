@@ -8,17 +8,23 @@ using Fixed_Dial_BLL;
 using System.Data.SqlClient;
 using System.Data;
 using System.IO;
+using Fixed_Dial_BLL;
+
 
 namespace Admin_Fixdial.Dashboard
 {
     public partial class Category : System.Web.UI.Page
     {
         categoryManagementBLL categoryManagementBLL = new categoryManagementBLL();
+        mediaManagementBLL mediaManagementBLL = new mediaManagementBLL();
+        adminIDBLL adminIDBLL = new adminIDBLL();
 
         string connectionString = @"server=JACK-PC\SQLEXPRESS;User ID=sa;Password=1234;Database = indiantr_fixeddial";
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            adminInfoPL();
+
             if (!IsPostBack)
             {
                 PopulateGridview();
@@ -27,15 +33,19 @@ namespace Admin_Fixdial.Dashboard
             //insertCategory();
         }
 
+        void adminInfoPL()
+        {
+            int aID = adminIDBLL.adminMail(Session["Login"].ToString());
+            Cache["adminID"] = aID;
+        }
+
         void PopulateGridview()
         {
+            
+            
             DataTable dtbl = new DataTable();
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
-            {
-                sqlCon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM CategoryMaster", sqlCon);
-                sqlDa.Fill(dtbl);
-            }
+            dtbl = categoryManagementBLL.PopulateGridViewMethod();
+           
             if (dtbl.Rows.Count > 0)
             {
                 categoryGridview.DataSource = dtbl;
@@ -70,7 +80,8 @@ namespace Admin_Fixdial.Dashboard
 
             fileUpload.SaveAs(Path.Combine(directory, changeName));
 
-
+            int adminID = Convert.ToInt16(Cache["adminID"]);
+            mediaManagementBLL.mediaManagement(changeName, oName, fExt, fSize, DateTime.Now, adminID);
         }
 
         protected void categoryGridview_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -84,7 +95,8 @@ namespace Admin_Fixdial.Dashboard
                     using (SqlConnection sqlCon = new SqlConnection(connectionString))
                     {
                         sqlCon.Open();
-                        string query = "INSERT INTO CategoryMaster (categoryName,pageTitle,metaKeyword,metaDescription) VALUES (@categoryName,@pageTitle,@metaKeyword,@description)";
+                        string query = "INSERT INTO CategoryMaster (categoryName,pageTitle,metaKeyword,metaDescription,IsActive,IsSelected,createDate,updatedDate)" +
+                            " VALUES (@categoryName,@pageTitle,@metaKeyword,@description,1,1,'"+DateTime.Now+"','"+DateTime.Now+"')";
                         SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                         sqlCmd.Parameters.AddWithValue("@categoryName", (categoryGridview.FooterRow.FindControl("txtCategoryNameFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@pageTitle", (categoryGridview.FooterRow.FindControl("txtPageTitleFooter") as TextBox).Text.Trim());

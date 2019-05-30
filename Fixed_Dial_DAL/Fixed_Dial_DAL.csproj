@@ -78,8 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adminDAL.cs" />
+    <Compile Include="adminIdDAL.cs" />
     <Compile Include="adminLogin.cs" />
     <Compile Include="categoryManagementDAL.cs" />
+    <Compile Include="mediaManagementDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

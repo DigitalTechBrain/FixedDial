@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Fixed_Dial_DAL;
+using System.Data;
 
 namespace Fixed_Dial_BLL
 {
@@ -14,6 +15,13 @@ namespace Fixed_Dial_BLL
         public void categoryMagementBlMethod(string categoryName, int IsActive, int IsSelected, int mediaId, string pageTitle, string metaKeyword, string metaDescription, DateTime createDate, int createdBy, DateTime updatedDate, int updatedBy)
         {
             cmanagDAL.insertCategoriesDAL(categoryName, IsActive, IsSelected, mediaId, pageTitle, metaKeyword, metaDescription, createDate, createdBy, updatedDate, updatedBy);
+        }
+
+        public DataTable PopulateGridViewMethod()
+        {
+            DataTable dataTable =  cmanagDAL.PopulateGridview();
+
+            return dataTable;
         }
     }
 }

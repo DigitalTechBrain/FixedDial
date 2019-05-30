@@ -11,11 +11,13 @@ namespace Fixed_Dial_DAL
 {
     public class categoryManagementDAL
     {
-       public void insertCategoriesDAL(string categoryName,int IsActive,int IsSelected,int mediaId,string pageTitle,string metaKeyword,string metaDescription,DateTime createDate,int createdBy,DateTime updatedDate,int updatedBy)
-        {
-           // string constr = ConfigurationManager.ConnectionStrings["DfltConnection"].ConnectionString;
+        SqlConnection constr = new SqlConnection(@"server=JACK-PC\SQLEXPRESS;User ID=sa;Password=1234;Database = indiantr_fixeddial");
 
-            SqlConnection constr = new SqlConnection(@"server=JACK-PC\SQLEXPRESS;User ID=sa;Password=1234;Database = indiantr_fixeddial");
+        public void insertCategoriesDAL(string categoryName, int IsActive, int IsSelected, int mediaId, string pageTitle, string metaKeyword, string metaDescription, DateTime createDate, int createdBy, DateTime updatedDate, int updatedBy)
+        {
+            // string constr = ConfigurationManager.ConnectionStrings["DfltConnection"].ConnectionString;
+
+
 
             string query = "categoryMasterPro";
             List<SqlParameter> parameters = new List<SqlParameter>();
@@ -32,7 +34,22 @@ namespace Fixed_Dial_DAL
             parameters.Add(new SqlParameter("@updatedBy", updatedBy));
 
             int rowsAffected = SqlHelper.ExecuteNonQuery(constr, CommandType.StoredProcedure, query, parameters.ToArray());
+
+
         }
 
+
+        public DataTable PopulateGridview()
+        {
+            DataTable dtbl = new DataTable();
+            using (SqlConnection sqlCon = new SqlConnection(@"server=JACK-PC\SQLEXPRESS;User ID=sa;Password=1234;Database = indiantr_fixeddial"))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM CategoryMaster", sqlCon);
+                sqlDa.Fill(dtbl);
+
+                return dtbl;
+            }
+        }
     }
 }

@@ -532,6 +532,7 @@
     <Content Include="Dashboard\pages\user-profile.html" />
     <Content Include="Dashboard\pages\widgets.html" />
     <Content Include="Dashboard\SubCategory.aspx" />
+    <Content Include="Dashboard\Testing.aspx" />
     <Content Include="Dashboard\UserCreation.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -570,6 +571,13 @@
     </Compile>
     <Compile Include="Dashboard\SubCategory.aspx.designer.cs">
       <DependentUpon>SubCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Testing.aspx.cs">
+      <DependentUpon>Testing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Testing.aspx.designer.cs">
+      <DependentUpon>Testing.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\UserCreation.aspx.cs">
       <DependentUpon>UserCreation.aspx</DependentUpon>
