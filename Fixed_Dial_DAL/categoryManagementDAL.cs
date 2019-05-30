@@ -13,31 +13,36 @@ namespace Fixed_Dial_DAL
     {
         SqlConnection constr = new SqlConnection(@"server=JACK-PC\SQLEXPRESS;User ID=sa;Password=1234;Database = indiantr_fixeddial");
 
-        public void insertCategoriesDAL(string categoryName, int IsActive, int IsSelected, int mediaId, string pageTitle, string metaKeyword, string metaDescription, DateTime createDate, int createdBy, DateTime updatedDate, int updatedBy)
+       public void insertCategoryDALmethod(
+           string categoryName,string pageTitle,string metaKeyword,string metaDescription,int mediaID,int adminID)
         {
-            // string constr = ConfigurationManager.ConnectionStrings["DfltConnection"].ConnectionString;
-
-
-
+            
             string query = "categoryMasterPro";
             List<SqlParameter> parameters = new List<SqlParameter>();
+
             parameters.Add(new SqlParameter("@categoryName", categoryName));
-            parameters.Add(new SqlParameter("@IsActive", IsActive));
-            parameters.Add(new SqlParameter("@IsSelected", IsSelected));
-            parameters.Add(new SqlParameter("@mediaId", mediaId));
+            parameters.Add(new SqlParameter("@IsActive", 1));
+            parameters.Add(new SqlParameter("@IsSelected", 1));
+            parameters.Add(new SqlParameter("@mediaId", mediaID));
             parameters.Add(new SqlParameter("@pageTitle", pageTitle));
             parameters.Add(new SqlParameter("@metaKeyword", metaKeyword));
             parameters.Add(new SqlParameter("@metaDescription", metaDescription));
-            parameters.Add(new SqlParameter("@createDate", createDate));
-            parameters.Add(new SqlParameter("@createdBy", createdBy));
-            parameters.Add(new SqlParameter("@updatedDate", updatedDate));
-            parameters.Add(new SqlParameter("@updatedBy", updatedBy));
+            parameters.Add(new SqlParameter("@createDate", DateTime.Now));
+            parameters.Add(new SqlParameter("@createdBy", adminID));
+            parameters.Add(new SqlParameter("@updatedDate", DateTime.Now));
+            parameters.Add(new SqlParameter("@updatedBy", adminID));
 
             int rowsAffected = SqlHelper.ExecuteNonQuery(constr, CommandType.StoredProcedure, query, parameters.ToArray());
-
-
         }
 
+        public void deleteCategoryDAL(int id)
+        {
+            
+            string query = "DELETE FROM CategoryMaster WHERE categoryId = @id";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@id", id));
+            int rowsAffected = SqlHelper.ExecuteNonQuery(constr, CommandType.Text, query, parameters.ToArray());
+        }
 
         public DataTable PopulateGridview()
         {
@@ -51,5 +56,28 @@ namespace Fixed_Dial_DAL
                 return dtbl;
             }
         }
+
+        public void updateCategoryDAL(
+           int id, string categoryName, string pageTitle, string metaKeyword, string metaDescription, int mediaID, int adminID)
+        {
+            string query = "updateCategoryPro";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@id", id));
+            parameters.Add(new SqlParameter("@categoryName", categoryName));
+            parameters.Add(new SqlParameter("@IsActive", 1));
+            parameters.Add(new SqlParameter("@IsSelected", 1));
+            parameters.Add(new SqlParameter("@mediaId", mediaID));
+            parameters.Add(new SqlParameter("@pageTitle", pageTitle));
+            parameters.Add(new SqlParameter("@metaKeyword", metaKeyword));
+            parameters.Add(new SqlParameter("@metaDescription", metaDescription));
+            parameters.Add(new SqlParameter("@createDate", DateTime.Now));
+            parameters.Add(new SqlParameter("@createdBy", adminID));
+            parameters.Add(new SqlParameter("@updatedDate", DateTime.Now));
+            parameters.Add(new SqlParameter("@updatedBy", adminID));
+
+            int rowsAffected = SqlHelper.ExecuteNonQuery(constr, CommandType.StoredProcedure, query, parameters.ToArray());
+        }
+
+        
     }
 }

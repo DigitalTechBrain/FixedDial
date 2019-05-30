@@ -12,16 +12,26 @@ namespace Fixed_Dial_BLL
     {
         categoryManagementDAL cmanagDAL = new categoryManagementDAL();
 
-        public void categoryMagementBlMethod(string categoryName, int IsActive, int IsSelected, int mediaId, string pageTitle, string metaKeyword, string metaDescription, DateTime createDate, int createdBy, DateTime updatedDate, int updatedBy)
-        {
-            cmanagDAL.insertCategoriesDAL(categoryName, IsActive, IsSelected, mediaId, pageTitle, metaKeyword, metaDescription, createDate, createdBy, updatedDate, updatedBy);
-        }
-
         public DataTable PopulateGridViewMethod()
         {
             DataTable dataTable =  cmanagDAL.PopulateGridview();
 
             return dataTable;
+        }
+
+        public void insertCategoryBLLmethod(string categoryName, string pageTitle, string metaKeyword, string metaDescription,int mediaID,int adminID)
+        {
+            cmanagDAL.insertCategoryDALmethod(categoryName, pageTitle, metaKeyword, metaDescription,mediaID, adminID);
+        }
+
+        public void deleteCategoryBLLmethod(int id)
+        {
+            cmanagDAL.deleteCategoryDAL(id);
+        }
+
+        public void updateCategoryBLLmethod(int id,string categoryName, string pageTitle, string metaKeyword, string metaDescription,int mediaID,int adminID)
+        {
+            cmanagDAL.updateCategoryDAL(id,categoryName, pageTitle, metaKeyword, metaDescription, mediaID, adminID);
         }
     }
 }

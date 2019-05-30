@@ -22,7 +22,7 @@ namespace Admin_Fixdial.Dashboard
         public int adminID;
         public int currentMediaID;
 
-        string connectionString = @"server=JACK-PC\SQLEXPRESS;User ID=sa;Password=1234;Database = indiantr_fixeddial";
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,7 +33,7 @@ namespace Admin_Fixdial.Dashboard
                 PopulateGridview();
             }
 
-            //insertCategory();
+           
         }
 
        
@@ -94,33 +94,32 @@ namespace Admin_Fixdial.Dashboard
         {
             mediaUpload();
 
+
             try
             {
                 if (e.CommandName.Equals("AddNew"))
                 {
-                    using (SqlConnection sqlCon = new SqlConnection(connectionString))
-                    {
-                        sqlCon.Open();
-                        string query = "INSERT INTO CategoryMaster (categoryName,pageTitle,metaKeyword,metaDescription,IsActive,IsSelected,createDate,updatedDate,createdBy,updatedBy,mediaId)" +
-                            " VALUES (@categoryName,@pageTitle,@metaKeyword,@description,1,1,'"+DateTime.Now+"','"+DateTime.Now+"','"+ adminID + "','" + adminID + "','"+ currentMediaID + "')";
-                        SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                        sqlCmd.Parameters.AddWithValue("@categoryName", (categoryGridview.FooterRow.FindControl("txtCategoryNameFooter") as TextBox).Text.Trim());
-                        sqlCmd.Parameters.AddWithValue("@pageTitle", (categoryGridview.FooterRow.FindControl("txtPageTitleFooter") as TextBox).Text.Trim());
-                        sqlCmd.Parameters.AddWithValue("@metaKeyword", (categoryGridview.FooterRow.FindControl("txtMetaKeywordFooter") as TextBox).Text.Trim());
-                        sqlCmd.Parameters.AddWithValue("@description", (categoryGridview.FooterRow.FindControl("txtMetaDescriptionFooter") as TextBox).Text.Trim());
-                        sqlCmd.ExecuteNonQuery();
+
+                    string categoryName = (categoryGridview.FooterRow.FindControl("txtCategoryNameFooter") as TextBox).Text.Trim();
+                    string pageTitle = (categoryGridview.FooterRow.FindControl("txtPageTitleFooter") as TextBox).Text.Trim();
+                    string metaKeyword = (categoryGridview.FooterRow.FindControl("txtMetaKeywordFooter") as TextBox).Text.Trim();
+                    string metaDescription = (categoryGridview.FooterRow.FindControl("txtMetaDescriptionFooter") as TextBox).Text.Trim();
+                    int mediaID = currentMediaID;
+
+                    categoryManagementBLL.insertCategoryBLLmethod(categoryName, pageTitle, metaKeyword, metaDescription, mediaID,adminID);
+
                         PopulateGridview();
                         lblSuccessMessage.Text = "New Record Added";
                         lblErrorMessage.Text = "";
-                    }
-                }
             }
+        
+        }
             catch (Exception ex)
             {
                 lblSuccessMessage.Text = "";
                 lblErrorMessage.Text = ex.Message;
             }
-        }
+}
 
         protected void categoryGridview_RowEditing(object sender, GridViewEditEventArgs e)
         {
@@ -136,47 +135,80 @@ namespace Admin_Fixdial.Dashboard
 
         protected void categoryGridview_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            //Cell ID
+            int id = Convert.ToInt32(categoryGridview.DataKeys[e.RowIndex].Value.ToString());
+            // Taking Media ID
+            int mediaID = mediaManagementBLL.getMediaIDBLL(id);
+
+
+            string categoryName = (categoryGridview.Rows[e.RowIndex].FindControl("txtCategoryName") as TextBox).Text.Trim();
+            string pageTitle = (categoryGridview.Rows[e.RowIndex].FindControl("txtPageTitle") as TextBox).Text.Trim();
+            string metaKeyword = (categoryGridview.Rows[e.RowIndex].FindControl("txtMetaKeyword") as TextBox).Text.Trim();
+            string metaDescription = (categoryGridview.Rows[e.RowIndex].FindControl("txtMetaDescription") as TextBox).Text.Trim();
+            //int mediaID = currentMediaID;
+
             try
-            {
-                using (SqlConnection sqlCon = new SqlConnection(connectionString))
-                {
-                    sqlCon.Open();
-                    string query = "UPDATE CategoryMaster SET categoryName=@categoryName,pageTitle=@pageTitle,metaKeyword=@metaKeyword,metaDescription=@metaDescription WHERE categoryId = @id";
-                    SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                    sqlCmd.Parameters.AddWithValue("@categoryName", (categoryGridview.Rows[e.RowIndex].FindControl("txtCategoryName") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@pageTitle", (categoryGridview.Rows[e.RowIndex].FindControl("txtPageTitle") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@metaKeyword", (categoryGridview.Rows[e.RowIndex].FindControl("txtMetaKeyword") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@metaDescription", (categoryGridview.Rows[e.RowIndex].FindControl("txtMetaDescription") as TextBox).Text.Trim());
-                    sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(categoryGridview.DataKeys[e.RowIndex].Value.ToString()));
-                    sqlCmd.ExecuteNonQuery();
+            {  
+                
+
+                //Media Update
+               
+                FileUpload fileUpload = (FileUpload)categoryGridview.Rows[e.RowIndex].FindControl("FileUploadItem");
+                if(fileUpload.HasFile == true)
+                { 
+                string fName = fileUpload.FileName;
+                string oName = fileUpload.FileName;
+                string fExt = System.IO.Path.GetExtension(fileUpload.FileName);
+                int fSize = Convert.ToInt16(Math.Round(((decimal)fileUpload.PostedFile.ContentLength / (decimal)1024), 2));
+
+
+                string directory = Server.MapPath("~/Dashboard/Images/Category/");
+
+                string changeName = DateTime.Now.ToString("ddmmmmyyyyhhmmssffffff") + fExt;
+
+                fileUpload.SaveAs(Path.Combine(directory, changeName));
+
+                adminID = Convert.ToInt16(Cache["adminID"]);
+                mediaManagementBLL.updateMediaManagementBLLMethod(mediaID, changeName, oName, fExt, fSize,  adminID);
+                }
+                //Media Update End
+
+                //Category Update
+                
+                categoryManagementBLL.updateCategoryBLLmethod(id,categoryName, pageTitle, metaKeyword, metaDescription, currentMediaID, adminID);
                     categoryGridview.EditIndex = -1;
                     PopulateGridview();
                     lblSuccessMessage.Text = "Selected Record Updated";
                     lblErrorMessage.Text = "";
-                }
-            }
+                //Category UPdate End
+
+        }
             catch (Exception ex)
             {
                 lblSuccessMessage.Text = "";
                 lblErrorMessage.Text = ex.Message;
             }
-        }
+}
 
         protected void categoryGridview_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+
+            int id = Convert.ToInt32(categoryGridview.DataKeys[e.RowIndex].Value.ToString());
+            //Deleting Media
+            int mediaID = mediaManagementBLL.getMediaIDBLL(id);
+            mediaManagementBLL.deleteMediaFileBLL(mediaID);
+
             try
             {
-                using (SqlConnection sqlCon = new SqlConnection(connectionString))
-                {
-                    sqlCon.Open();
-                    string query = "DELETE FROM CategoryMaster WHERE categoryId = @id";
-                    SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                    sqlCmd.Parameters.AddWithValue("@id", Convert.ToInt32(categoryGridview.DataKeys[e.RowIndex].Value.ToString()));
-                    sqlCmd.ExecuteNonQuery();
+
+                categoryManagementBLL.deleteCategoryBLLmethod(id);
+
+                
+
                     PopulateGridview();
                     lblSuccessMessage.Text = "Selected Record Deleted";
                     lblErrorMessage.Text = "";
-                }
+                
             }
             catch (Exception ex)
             {
@@ -185,12 +217,4 @@ namespace Admin_Fixdial.Dashboard
             }
         }
     }
-
-
-        //void insertCategory()
-        //{
-        //    categoryManagementBLL.categoryMagementBlMethod("Test",1,1,1,"Page Title","Law","Added",DateTime.Now,1,DateTime.Now,1);
-        //}
-
-
-    }
+ }
