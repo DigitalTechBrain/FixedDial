@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Fixed_Dial_BLL;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 
 namespace Admin_Fixdial.Dashboard
 {
@@ -54,10 +55,30 @@ namespace Admin_Fixdial.Dashboard
 
         }
 
+        void mediaUpload()
+        {
+            FileUpload fileUpload = (FileUpload)categoryGridview.FooterRow.FindControl("FileUploadFooter");
+            string fName = fileUpload.FileName;
+            string oName = fileUpload.FileName;
+            string fExt = System.IO.Path.GetExtension(fileUpload.FileName);
+            int fSize = Convert.ToInt16(Math.Round(((decimal)fileUpload.PostedFile.ContentLength / (decimal)1024), 2));
+
+
+            string directory = Server.MapPath("~/Dashboard/Images/Category/");
+
+            string changeName = DateTime.Now.ToString("ddmmmmyyyyhhmmssffffff") + fExt;
+
+            fileUpload.SaveAs(Path.Combine(directory, changeName));
+
+
+        }
+
         protected void categoryGridview_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-           // try
-           // {
+            mediaUpload();
+
+            try
+            {
                 if (e.CommandName.Equals("AddNew"))
                 {
                     using (SqlConnection sqlCon = new SqlConnection(connectionString))
@@ -75,12 +96,12 @@ namespace Admin_Fixdial.Dashboard
                         lblErrorMessage.Text = "";
                     }
                 }
-           // }
-            //catch (Exception ex)
-            //{
-            //    lblSuccessMessage.Text = "";
-            //    lblErrorMessage.Text = ex.Message;
-            //}
+            }
+            catch (Exception ex)
+            {
+                lblSuccessMessage.Text = "";
+                lblErrorMessage.Text = ex.Message;
+            }
         }
 
         protected void categoryGridview_RowEditing(object sender, GridViewEditEventArgs e)

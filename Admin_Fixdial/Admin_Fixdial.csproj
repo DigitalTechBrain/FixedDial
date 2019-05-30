@@ -628,6 +628,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dashboard\Images\AdminImages\" />
+    <Folder Include="Dashboard\Images\Category\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fixed_Dial_BLL\Fixed_Dial_BLL.csproj">
