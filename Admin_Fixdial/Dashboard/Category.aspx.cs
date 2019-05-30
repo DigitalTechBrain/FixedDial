@@ -19,6 +19,9 @@ namespace Admin_Fixdial.Dashboard
         mediaManagementBLL mediaManagementBLL = new mediaManagementBLL();
         adminIDBLL adminIDBLL = new adminIDBLL();
 
+        public int adminID;
+        public int currentMediaID;
+
         string connectionString = @"server=JACK-PC\SQLEXPRESS;User ID=sa;Password=1234;Database = indiantr_fixeddial";
 
         protected void Page_Load(object sender, EventArgs e)
@@ -33,11 +36,7 @@ namespace Admin_Fixdial.Dashboard
             //insertCategory();
         }
 
-        void adminInfoPL()
-        {
-            int aID = adminIDBLL.adminMail(Session["Login"].ToString());
-            Cache["adminID"] = aID;
-        }
+       
 
         void PopulateGridview()
         {
@@ -65,6 +64,13 @@ namespace Admin_Fixdial.Dashboard
 
         }
 
+        //Getting Admin ID
+        void adminInfoPL()
+        {
+            int aID = adminIDBLL.adminMail(Session["Login"].ToString());
+            Cache["adminID"] = aID;
+        }
+        //Inserting Media with Admin ID
         void mediaUpload()
         {
             FileUpload fileUpload = (FileUpload)categoryGridview.FooterRow.FindControl("FileUploadFooter");
@@ -80,8 +86,8 @@ namespace Admin_Fixdial.Dashboard
 
             fileUpload.SaveAs(Path.Combine(directory, changeName));
 
-            int adminID = Convert.ToInt16(Cache["adminID"]);
-            mediaManagementBLL.mediaManagement(changeName, oName, fExt, fSize, DateTime.Now, adminID);
+             adminID = Convert.ToInt16(Cache["adminID"]);
+             currentMediaID = mediaManagementBLL.mediaManagement(changeName, oName, fExt, fSize, DateTime.Now, adminID);
         }
 
         protected void categoryGridview_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -95,8 +101,8 @@ namespace Admin_Fixdial.Dashboard
                     using (SqlConnection sqlCon = new SqlConnection(connectionString))
                     {
                         sqlCon.Open();
-                        string query = "INSERT INTO CategoryMaster (categoryName,pageTitle,metaKeyword,metaDescription,IsActive,IsSelected,createDate,updatedDate)" +
-                            " VALUES (@categoryName,@pageTitle,@metaKeyword,@description,1,1,'"+DateTime.Now+"','"+DateTime.Now+"')";
+                        string query = "INSERT INTO CategoryMaster (categoryName,pageTitle,metaKeyword,metaDescription,IsActive,IsSelected,createDate,updatedDate,createdBy,updatedBy,mediaId)" +
+                            " VALUES (@categoryName,@pageTitle,@metaKeyword,@description,1,1,'"+DateTime.Now+"','"+DateTime.Now+"','"+ adminID + "','" + adminID + "','"+ currentMediaID + "')";
                         SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                         sqlCmd.Parameters.AddWithValue("@categoryName", (categoryGridview.FooterRow.FindControl("txtCategoryNameFooter") as TextBox).Text.Trim());
                         sqlCmd.Parameters.AddWithValue("@pageTitle", (categoryGridview.FooterRow.FindControl("txtPageTitleFooter") as TextBox).Text.Trim());

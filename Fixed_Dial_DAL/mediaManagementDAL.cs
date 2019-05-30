@@ -13,7 +13,7 @@ namespace Fixed_Dial_DAL
 
         public int currentMediaID;
 
-        public void insertMediaDetails(string mediafileName, string mediaOriginalName, string mediaExtn, int mediaSize, DateTime CreatedDate, int adminID)
+        public int insertMediaDetails(string mediafileName, string mediaOriginalName, string mediaExtn, int mediaSize, DateTime CreatedDate, int adminID)
         {
 
             using (SqlCommand sqlCommand = new SqlCommand("mediaDetails", con))
@@ -40,6 +40,8 @@ namespace Fixed_Dial_DAL
                         currentMediaID = Convert.ToInt32(sqlCommand.ExecuteScalar());
 
                         con.Close();
+
+                        return currentMediaID;
                     }
                 }
 

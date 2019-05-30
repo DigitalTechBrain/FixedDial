@@ -9,9 +9,11 @@ namespace Fixed_Dial_BLL
     public class mediaManagementBLL
     {
         mediaManagementDAL mediaManagementDAL = new mediaManagementDAL();
-        public void mediaManagement(string mediafileName, string mediaOriginalName, string mediaExtn, int mediaSize, DateTime CreatedDate, int adminID)
+        public int mediaManagement(string mediafileName, string mediaOriginalName, string mediaExtn, int mediaSize, DateTime CreatedDate, int adminID)
         {
-            mediaManagementDAL.insertMediaDetails(mediafileName, mediaOriginalName, mediaExtn, mediaSize, CreatedDate, adminID);
+          int mediaID =  mediaManagementDAL.insertMediaDetails(mediafileName, mediaOriginalName, mediaExtn, mediaSize, CreatedDate, adminID);
+
+            return mediaID;
 
         }
     }
