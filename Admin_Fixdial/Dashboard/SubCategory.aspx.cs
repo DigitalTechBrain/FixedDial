@@ -13,5 +13,10 @@ namespace Admin_Fixdial.Dashboard
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

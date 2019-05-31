@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/vendor/vector-map/jqvmap.css">
     <link rel="stylesheet" href="assets/vendor/jvectormap/jquery-jvectormap-2.0.2.css">
     <link rel="stylesheet" href="assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <title>Fixed Dial administrator</title>
 </head>
 
 <body>
@@ -99,7 +99,7 @@ John Abraham</h5>
                                             <a class="nav-link" href="UserCreation.aspx">Create User <span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="general.html">User List</a>
+                                            <a class="nav-link" href="UserList.aspx">User List</a>
                                         </li>
                                        
                                     </ul>
