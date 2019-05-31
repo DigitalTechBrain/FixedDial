@@ -238,10 +238,10 @@ John Abraham</h5>
                                                     <asp:BoundField HeaderText="Role" DataField="aRoll" />
                                                     <asp:BoundField HeaderText="Register Date" DataField="registerDate" />
                                                     <asp:BoundField HeaderText="Status" DataField="aStatus" />
-                                                    <asp:ButtonField ButtonType="Button" Text="Suspend" CommandName="suspendAdmin" >
+                                                    <asp:ButtonField Text="Suspend" CommandName="suspendAdmin" >
                                                     <ControlStyle Height="20px" Width="70px" BackColor="#FF6666" />
                                                     </asp:ButtonField>
-                                                     <asp:ButtonField ButtonType="Button" Text="Activate" CommandName="activateAdmin" >
+                                                     <asp:ButtonField Text="Activate" CommandName="activateAdmin" >
                                                     <ControlStyle Height="20px" Width="70px" BackColor="#0099ff" />
                                                     </asp:ButtonField>
                                                     

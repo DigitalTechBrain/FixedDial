@@ -83,6 +83,7 @@
     <Compile Include="categoryManagementDAL.cs" />
     <Compile Include="mediaManagementDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="subCategoryDAL.cs" />
     <Compile Include="UserListDAL.cs" />
   </ItemGroup>
   <ItemGroup>

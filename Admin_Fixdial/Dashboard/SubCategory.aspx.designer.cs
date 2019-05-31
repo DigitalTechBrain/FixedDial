@@ -49,13 +49,13 @@ namespace Admin_Fixdial.Dashboard {
         protected global::System.Web.UI.WebControls.DropDownList ddwnCategoryDropDown;
         
         /// <summary>
-        /// txtSubCategory control.
+        /// txtSubCategoryName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSubCategory;
+        protected global::System.Web.UI.WebControls.TextBox txtSubCategoryName;
         
         /// <summary>
         /// RequiredFieldValidator1 control.
@@ -119,24 +119,6 @@ namespace Admin_Fixdial.Dashboard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-        
-        /// <summary>
-        /// fileuploadImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileuploadImage;
-        
-        /// <summary>
-        /// RequiredFieldValidator7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
         
         /// <summary>
         /// btnSubmit control.

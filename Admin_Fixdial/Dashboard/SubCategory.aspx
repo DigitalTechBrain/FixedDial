@@ -222,8 +222,8 @@ John Abraham</h5>
 
                                             <div class="form-group">
                                                 <label id ="lblSubCatName"  class="col-form-label">Sub Category Name</label>
-                                                <asp:TextBox ID="txtSubCategory" runat="server" class="form-control"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Sub Category Required" ControlToValidate="txtSubCategory">*</asp:RequiredFieldValidator>
+                                                <asp:TextBox ID="txtSubCategoryName" runat="server" class="form-control"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Sub Category Required" ControlToValidate="txtSubCategoryName">*</asp:RequiredFieldValidator>
                                             </div>
                                             
                                         <div class="form-group">
@@ -245,14 +245,7 @@ John Abraham</h5>
                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Meta Description Required" ControlToValidate="txtMetaDescription">*</asp:RequiredFieldValidator>
                                             </div>
                                              
-                                                                                           
-                                            <div class="custom-file mb-3">
-                                                
-                                                <asp:FileUpload ID="fileuploadImage" runat="server" class="custom-file-input"/>
-                                                <label class="custom-file-label" id="customFile">Upload Image</label>
-                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Image Required" ControlToValidate="fileuploadImage">*</asp:RequiredFieldValidator>
-                                            </div>
-                                            
+                                          
                                              <div class="form-group">
                                                 <asp:Button ID="btnSubmit" class = "btn btn-primary" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
                                                 <asp:Label ID="lblNotification" runat="server" ForeColor="#CC0000"></asp:Label>
