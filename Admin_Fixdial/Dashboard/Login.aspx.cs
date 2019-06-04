@@ -32,6 +32,10 @@ namespace Admin_Fixdial.Dashboard
             {
                 Session["Login"] = txtMail.Text;
 
+                adminIDBLL adminIDBLL = new adminIDBLL();
+                int adminID =  adminIDBLL.adminMail(txtMail.Text);
+                Cache["adminID"] = adminID;
+
                 Response.Redirect("Home.aspx");
             }
             else

@@ -8,7 +8,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <title>Fix Dial Administrator</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
@@ -28,7 +28,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="index.html">Fixed Dial</a>
+                <a class="navbar-brand" href="Home.aspx">Fixed Dial</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -78,13 +78,13 @@ John Abraham</h5>
                                     <ul class="nav flex-column">
                                        
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-finance.html">Category</a>
+                                            <a class="nav-link" href="Category.aspx">Category</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-sales.html">Sub Category</a>
+                                            <a class="nav-link" href="SubCategory.aspx">Sub Category</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-sales.html">Micro Category</a>
+                                            <a class="nav-link" href="MicroCategory.aspx">Micro Category</a>
                                         </li>
 
                                       
@@ -99,7 +99,7 @@ John Abraham</h5>
                                             <a class="nav-link" href="UserCreation.aspx">Create User <span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="general.html">User List</a>
+                                            <a class="nav-link" href="UserList.aspx">User List</a>
                                         </li>
                                        
                                     </ul>
@@ -211,74 +211,73 @@ John Abraham</h5>
                                           <form id ="submitForm" runat  ="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
+                                              <asp:Label ID="ltlNotification" runat="server" Text="Label"></asp:Label>
                                     </h5>
                                     <div class="card-body">
-                                      
-                                            <div class="form-group">
-                                                <label id ="lblName"  class="col-form-label">Full Name</label>
-                                                <asp:TextBox ID="txtName" runat="server" class="form-control"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Name is Required" ControlToValidate="txtName">*</asp:RequiredFieldValidator>
-                                            </div>
-                                             <div class="form-group">
-                                                <label for="inputText3"  class="col-form-label">Assign Role</label>
-                                                    <asp:DropDownList ID="dropdownRole" runat="server" class="form-control">
-                                                        <asp:ListItem>SuperAdmin</asp:ListItem>
-                                                        <asp:ListItem>Admin</asp:ListItem>
-                                                        <asp:ListItem>Subscriber</asp:ListItem>
+                                       <div class="form-group">
+                                                <label id="lblCategory"  class="col-form-label">Select Category</label>
+                                                    <asp:DropDownList ID="ddwnCategoryDropDown"  runat="server" class="form-control">
                                                  </asp:DropDownList>
                                                 
                                             </div>
 
                                             <div class="form-group">
-                                                <label id ="lblAddress"  class="col-form-label">Email Address</label>
-                                                
-                                                    <asp:TextBox ID="txtMail" runat="server" placeholder="name@example.com" class="form-control"></asp:TextBox>
-                                               <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Mail Address Required" ControlToValidate="txtMail">*</asp:RequiredFieldValidator>
+                                                <label id ="lblSubCatName"  class="col-form-label">Sub Category Name</label>
+                                                <asp:TextBox ID="txtSubCategoryName" runat="server" class="form-control"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Sub Category Required" ControlToValidate="txtSubCategoryName">*</asp:RequiredFieldValidator>
                                             </div>
-                                             <div class="form-group">
-                                                <label id="lblCity" class="col-form-label">City</label>
-                                                <asp:TextBox ID="txtCity" runat="server" class="form-control"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="City Name is Required" ControlToValidate="txtCity">*</asp:RequiredFieldValidator>
+                                            
+                                        <div class="form-group">
+                                                <label id="lblPageTitle" class="col-form-label">Page Title</label>
+                                                <asp:TextBox ID="txtPageTitle" runat="server" class="form-control"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Page Title is Required" ControlToValidate="txtPageTitle">*</asp:RequiredFieldValidator>
                                             </div>
-                                             <div class="form-group">
-                                                <label id="lblDDGender" class="col-form-label">Gender</label>
-                                                    <asp:DropDownList ID="dropdownGender" runat="server" class="form-control">
-                                                        <asp:ListItem>Male</asp:ListItem>
-                                                        <asp:ListItem>Female</asp:ListItem>
-                                                 </asp:DropDownList>
-                                                
+
+                                         <div class="form-group">
+                                                <label id="lblMetaKeyword" class="col-form-label">Meta Keyword</label>
+                                                        <asp:TextBox ID="txtMetaKeyword" runat="server" class="form-control" placeholder="Keyword"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Meta Keyword Required" ControlToValidate="txtMetaKeyword">*</asp:RequiredFieldValidator>
                                             </div>
+
                                             <div class="form-group">
-                                                <label id="lblPhone" class="col-form-label">Phone Number</label>
-                                                        <asp:TextBox ID="txtPhone" runat="server" class="form-control" placeholder="10 Digits"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Phone Number Required" ControlToValidate="txtPhone">*</asp:RequiredFieldValidator>
-                                            </div>
-                                            <div class="form-group">
-                                                <label id="lblPwd">Password   </label>     
-                                                            <asp:TextBox ID="txtPassword" runat="server" placeholder="Password" class="form-control" TextMode="Password"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Password Required" ControlToValidate="txtPassword">*</asp:RequiredFieldValidator>
-                                            </div>
-                                              <div class="form-group">
-                                                <label id="lblConfirmPwd">Password        </label>
-                                                            <asp:TextBox ID="txtConfirmPassword" runat="server" placeholder="Confirm Password" class="form-control" TextMode="Password"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Confirm Password Required" ControlToValidate="txtConfirmPassword">*</asp:RequiredFieldValidator>
-                                            </div>
-                                            <div class="custom-file mb-3">
+                                                <label id ="lblmetaDescription"  class="col-form-label">Description</label>
                                                 
-                                                <asp:FileUpload ID="fileuploadImage" runat="server" class="custom-file-input"/>
-                                                <label class="custom-file-label" id="customFile">Upload Image</label>
-                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Image Required" ControlToValidate="fileuploadImage">*</asp:RequiredFieldValidator>
+                                                    <asp:TextBox ID="txtMetaDescription" runat="server"  class="form-control" TextMode="MultiLine"></asp:TextBox>
+                                               <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Meta Description Required" ControlToValidate="txtMetaDescription">*</asp:RequiredFieldValidator>
                                             </div>
-                                            <div class="form-group">
-                                                <label id="lbrlAddress">Address</label>
-                                                 <asp:TextBox ID="txtAddress" runat="server" class="form-control" TextMode="MultiLine"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Address Required" ControlToValidate="txtAddress">*</asp:RequiredFieldValidator>
-                                            </div>
+                                             
+                                          
                                              <div class="form-group">
                                                 <asp:Button ID="btnSubmit" class = "btn btn-primary" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
                                                 <asp:Label ID="lblNotification" runat="server" ForeColor="#CC0000"></asp:Label>
                                             </div>
 
+                                        <div class="form-group">
+                                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+                                                  <%-- Theme Properties --%>
+                <FooterStyle BackColor="White" ForeColor="#000066" />
+                <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                <RowStyle ForeColor="#000066" />
+                <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                <SortedDescendingHeaderStyle BackColor="#00547E" />
+                                                <Columns>
+                                                    <asp:BoundField HeaderText="Name" />
+                                                    <asp:BoundField HeaderText="Title" />
+                                                    <asp:BoundField HeaderText="Keyword" />
+                                                    <asp:BoundField HeaderText="Description" />
+                                                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Dashboard/Images/edit.png" Text="Update" >
+                                                    <ControlStyle Height="20px" Width="20px" />
+                                                    </asp:ButtonField>
+                                                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Dashboard/Images/delete.png" Text="Delete" >
+                                                    <ControlStyle Height="20px" Width="20px" />
+                                                    </asp:ButtonField>
+                                                </Columns>
+                                            </asp:GridView>
+                                        </div>
                                         </form>
                                     </div>
                                     

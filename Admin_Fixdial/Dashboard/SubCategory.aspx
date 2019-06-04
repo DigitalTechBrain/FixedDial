@@ -78,13 +78,13 @@ John Abraham</h5>
                                     <ul class="nav flex-column">
                                        
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-finance.html">Category</a>
+                                            <a class="nav-link" href="Category.aspx">Category</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-sales.html">Sub Category</a>
+                                            <a class="nav-link" href="SubCategory.aspx">Sub Category</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="dashboard-sales.html">Micro Category</a>
+                                            <a class="nav-link" href="MicroCategory.aspx">Micro Category</a>
                                         </li>
 
                                       
@@ -99,7 +99,7 @@ John Abraham</h5>
                                             <a class="nav-link" href="UserCreation.aspx">Create User <span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="general.html">User List</a>
+                                            <a class="nav-link" href="UserList.aspx">User List</a>
                                         </li>
                                        
                                     </ul>
@@ -190,7 +190,7 @@ John Abraham</h5>
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="page-header" id="top">
-                                    <h2 class="pageheader-title">User Creation </h2>
+                                    <h2 class="pageheader-title">Sub Category Creation</h2>
                                     
                                     
                                 </div>
@@ -211,6 +211,7 @@ John Abraham</h5>
                                           <form id ="submitForm" runat  ="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
+                                              <asp:Label ID="ltlNotification" runat="server" Text="Label"></asp:Label>
                                     </h5>
                                     <div class="card-body">
                                        <div class="form-group">
@@ -252,7 +253,7 @@ John Abraham</h5>
                                             </div>
 
                                         <div class="form-group">
-                                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+                                            <asp:GridView ID="populateSubCategoryGrid" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" DataKeyNames="SubCat_ID">
                                                   <%-- Theme Properties --%>
                 <FooterStyle BackColor="White" ForeColor="#000066" />
                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -264,14 +265,14 @@ John Abraham</h5>
                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                 <SortedDescendingHeaderStyle BackColor="#00547E" />
                                                 <Columns>
-                                                    <asp:BoundField HeaderText="Name" />
-                                                    <asp:BoundField HeaderText="Title" />
-                                                    <asp:BoundField HeaderText="Keyword" />
-                                                    <asp:BoundField HeaderText="Description" />
-                                                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Dashboard/Images/edit.png" Text="Update" >
+                                                    <asp:BoundField HeaderText="Name" DataField="SubCatName" />
+                                                    <asp:BoundField HeaderText="Title" DataField="PageTitle" />
+                                                    <asp:BoundField HeaderText="Keyword" DataField="MetaKeywork" />
+                                                    <asp:BoundField HeaderText="Description" DataField="MedaDescription" />
+                                                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Dashboard/Images/edit.png" Text="Update" CommandName="editSubCategory" >
                                                     <ControlStyle Height="20px" Width="20px" />
                                                     </asp:ButtonField>
-                                                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Dashboard/Images/delete.png" Text="Delete" >
+                                                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Dashboard/Images/delete.png" Text="Delete" CommandName="deleteSubCategory" >
                                                     <ControlStyle Height="20px" Width="20px" />
                                                     </asp:ButtonField>
                                                 </Columns>

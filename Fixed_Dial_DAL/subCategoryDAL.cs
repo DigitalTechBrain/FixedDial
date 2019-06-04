@@ -39,5 +39,39 @@ namespace Fixed_Dial_DAL
             DataSet ds = SqlHelper.ExecuteDataset(constr, CommandType.Text, query);
             return ds;
         }
+
+        public DataSet populateSubCategory()
+        {
+            string query = "SELECT * FROM SubCategoryManager";
+            DataSet ds = SqlHelper.ExecuteDataset(constr, CommandType.Text, query);
+            return ds;
+        }
+
+        public void deleteSubCategoryDAL(int id)
+        {
+
+            string query = "DELETE FROM SubCategoryManager WHERE SubCat_ID = @id";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@id", id));
+            int rowsAffected = SqlHelper.ExecuteNonQuery(constr, CommandType.Text, query, parameters.ToArray());
+        }
+
+        public void updateCategoryDAL(
+           int id, string categoryName, string pageTitle, string metaKeyword, string metaDescription, int adminID)
+        {
+            string query = "updateSubCategoryPro";
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@id", id));
+            parameters.Add(new SqlParameter("@SubCatName", categoryName));
+            parameters.Add(new SqlParameter("@PageTitle", pageTitle));
+            parameters.Add(new SqlParameter("@MetaKeywork", metaKeyword));
+            parameters.Add(new SqlParameter("@MedaDescription", metaDescription));
+            parameters.Add(new SqlParameter("@UpdatedDate", DateTime.Now));
+            parameters.Add(new SqlParameter("@UpdatedBy", adminID));
+
+            int rowsAffected = SqlHelper.ExecuteNonQuery(constr, CommandType.StoredProcedure, query, parameters.ToArray());
+        }
+
+
     }
 }

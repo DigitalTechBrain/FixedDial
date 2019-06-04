@@ -21,5 +21,21 @@ namespace Fixed_Dial_BLL
             DataSet ds = subCategoryDAL.bindCategory();
             return ds;
         }
+
+        public DataSet populateSubCat()
+        {
+            DataSet ds = subCategoryDAL.populateSubCategory();
+            return ds;
+        }
+
+        public void deleteSubCategoryBLL(int id)
+        {
+            subCategoryDAL.deleteSubCategoryDAL(id);
+        }
+
+        public void updateSubCategoryBLL(int id, string categoryName, string pageTitle, string metaKeyword, string metaDescription, int adminID)
+        {
+            subCategoryDAL.updateCategoryDAL( id,  categoryName,  pageTitle, metaKeyword,  metaDescription,  adminID);
+        }
     }
 }
