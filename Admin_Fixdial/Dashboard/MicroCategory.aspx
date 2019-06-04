@@ -190,7 +190,7 @@ John Abraham</h5>
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="page-header" id="top">
-                                    <h2 class="pageheader-title">User Creation </h2>
+                                    <h2 class="pageheader-title">Micro&nbsp; Category Creation</h2>
                                     
                                     
                                 </div>
@@ -215,14 +215,14 @@ John Abraham</h5>
                                     </h5>
                                     <div class="card-body">
                                        <div class="form-group">
-                                                <label id="lblCategory"  class="col-form-label">Select Category</label>
+                                                <label id="lblCategory"  class="col-form-label">Select Sub Category</label>
                                                     <asp:DropDownList ID="ddwnCategoryDropDown"  runat="server" class="form-control">
                                                  </asp:DropDownList>
                                                 
                                             </div>
 
                                             <div class="form-group">
-                                                <label id ="lblSubCatName"  class="col-form-label">Sub Category Name</label>
+                                                <label id ="lblSubCatName"  class="col-form-label">Micro&nbsp; Category Name</label>
                                                 <asp:TextBox ID="txtSubCategoryName" runat="server" class="form-control"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Sub Category Required" ControlToValidate="txtSubCategoryName">*</asp:RequiredFieldValidator>
                                             </div>
@@ -253,7 +253,7 @@ John Abraham</h5>
                                             </div>
 
                                         <div class="form-group">
-                                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+                                            <asp:GridView ID="populateSubCategoryGrid" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand" DataKeyNames="MicroCat_ID">
                                                   <%-- Theme Properties --%>
                 <FooterStyle BackColor="White" ForeColor="#000066" />
                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -265,14 +265,14 @@ John Abraham</h5>
                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                 <SortedDescendingHeaderStyle BackColor="#00547E" />
                                                 <Columns>
-                                                    <asp:BoundField HeaderText="Name" />
-                                                    <asp:BoundField HeaderText="Title" />
-                                                    <asp:BoundField HeaderText="Keyword" />
-                                                    <asp:BoundField HeaderText="Description" />
-                                                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Dashboard/Images/edit.png" Text="Update" >
+                                                    <asp:BoundField HeaderText="Name" DataField="MicroCatName" />
+                                                    <asp:BoundField HeaderText="Title" DataField="PageTitle" />
+                                                    <asp:BoundField HeaderText="Keyword" DataField="MetaKeyword" />
+                                                    <asp:BoundField HeaderText="Description" DataField="MetaDescription" />
+                                                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Dashboard/Images/edit.png" Text="Update" CommandName="editSubCategory" >
                                                     <ControlStyle Height="20px" Width="20px" />
                                                     </asp:ButtonField>
-                                                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Dashboard/Images/delete.png" Text="Delete" >
+                                                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Dashboard/Images/delete.png" Text="Delete" CommandName="deleteSubCategory" >
                                                     <ControlStyle Height="20px" Width="20px" />
                                                     </asp:ButtonField>
                                                 </Columns>
