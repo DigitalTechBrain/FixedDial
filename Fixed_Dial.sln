@@ -5,13 +5,15 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixed_Dial", "Fixed_Dial\Fixed_Dial.csproj", "{2E96554C-2089-4803-8E76-1E1CA7454595}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixed_Dial_API", "Fixed_Dial_API\Fixed_Dial_API.csproj", "{CC7D636E-1A49-4409-A380-2069C3CAC326}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixed_Dial_BLL", "Fixed_Dial_BLL\Fixed_Dial_BLL.csproj", "{02911C9B-A64B-4EF5-BF9F-0C165A356F03}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin_Fixdial", "Admin_Fixdial\Admin_Fixdial.csproj", "{969ED0FB-4A69-4F0F-982F-9F515AAB1C72}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixed_Dial_DAL", "Fixed_Dial_DAL\Fixed_Dial_DAL.csproj", "{1724EAD9-AB9F-4B15-B881-E2753868D941}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client_Data_Access", "Client_Data_Access\Client_Data_Access.csproj", "{D4A36458-2D2E-46ED-A2A0-78E8FD63CEE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client_API", "Client_API\Client_API.csproj", "{01A6C38D-5E1F-4509-B63A-A1EABD7D4831}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +25,6 @@ Global
 		{2E96554C-2089-4803-8E76-1E1CA7454595}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E96554C-2089-4803-8E76-1E1CA7454595}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E96554C-2089-4803-8E76-1E1CA7454595}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CC7D636E-1A49-4409-A380-2069C3CAC326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC7D636E-1A49-4409-A380-2069C3CAC326}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC7D636E-1A49-4409-A380-2069C3CAC326}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC7D636E-1A49-4409-A380-2069C3CAC326}.Release|Any CPU.Build.0 = Release|Any CPU
 		{02911C9B-A64B-4EF5-BF9F-0C165A356F03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{02911C9B-A64B-4EF5-BF9F-0C165A356F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02911C9B-A64B-4EF5-BF9F-0C165A356F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +37,14 @@ Global
 		{1724EAD9-AB9F-4B15-B881-E2753868D941}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1724EAD9-AB9F-4B15-B881-E2753868D941}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1724EAD9-AB9F-4B15-B881-E2753868D941}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4A36458-2D2E-46ED-A2A0-78E8FD63CEE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4A36458-2D2E-46ED-A2A0-78E8FD63CEE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4A36458-2D2E-46ED-A2A0-78E8FD63CEE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4A36458-2D2E-46ED-A2A0-78E8FD63CEE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A6C38D-5E1F-4509-B63A-A1EABD7D4831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A6C38D-5E1F-4509-B63A-A1EABD7D4831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A6C38D-5E1F-4509-B63A-A1EABD7D4831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A6C38D-5E1F-4509-B63A-A1EABD7D4831}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

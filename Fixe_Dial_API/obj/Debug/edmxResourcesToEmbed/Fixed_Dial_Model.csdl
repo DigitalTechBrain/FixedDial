@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Fixed_Dial_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MembersMaster">
+    <Key>
+      <PropertyRef Name="Member_ID" />
+    </Key>
+    <Property Name="Member_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="MemberDesignation" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="POCName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="POCPhoneOne" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="POCPhoneTwo" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="TollFreeNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FaxNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MemeberEmail" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="MemberPassword" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Building" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Street" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Landmark" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PinCode" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="MemberState" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MemberCountry" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GSTIN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PAN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MemberTAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Profile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EnquiryEmail" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="IsApproved" Type="Boolean" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ActivePlanType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MicroCategory" Type="Int32" />
+    <Property Name="PageTitle" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="MetaKeyword" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="MetaDescription" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceProviderType" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="TurnOver" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="BusinessStatus" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="Employee" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="LogoMediaId" Type="Int32" />
+    <Property Name="BannerImageID" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="Fixed_Dial_Entities_Con" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MembersMasters" EntityType="Self.MembersMaster" />
+  </EntityContainer>
+</Schema>

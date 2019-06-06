@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Client_DA_ModelStoreContainer" CdmEntityContainer="Client_DA_Entities">
+    <EntitySetMapping Name="CategoryMasters">
+      <EntityTypeMapping TypeName="Client_DA_Model.CategoryMaster">
+        <MappingFragment StoreEntitySet="CategoryMaster">
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsSelected" ColumnName="IsSelected" />
+          <ScalarProperty Name="mediaId" ColumnName="mediaId" />
+          <ScalarProperty Name="pageTitle" ColumnName="pageTitle" />
+          <ScalarProperty Name="metaKeyword" ColumnName="metaKeyword" />
+          <ScalarProperty Name="metaDescription" ColumnName="metaDescription" />
+          <ScalarProperty Name="createDate" ColumnName="createDate" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnquiryMasters">
+      <EntityTypeMapping TypeName="Client_DA_Model.EnquiryMaster">
+        <MappingFragment StoreEntitySet="EnquiryMaster">
+          <ScalarProperty Name="Lead_ID" ColumnName="Lead_ID" />
+          <ScalarProperty Name="LeadDate" ColumnName="LeadDate" />
+          <ScalarProperty Name="SendBy" ColumnName="SendBy" />
+          <ScalarProperty Name="SendTo" ColumnName="SendTo" />
+          <ScalarProperty Name="EnquiryType" ColumnName="EnquiryType" />
+          <ScalarProperty Name="LeadDescription" ColumnName="LeadDescription" />
+          <ScalarProperty Name="SenderName" ColumnName="SenderName" />
+          <ScalarProperty Name="SenderPhone" ColumnName="SenderPhone" />
+          <ScalarProperty Name="SenderEmail" ColumnName="SenderEmail" />
+          <ScalarProperty Name="SenderDescription" ColumnName="SenderDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MediaMasters">
+      <EntityTypeMapping TypeName="Client_DA_Model.MediaMaster">
+        <MappingFragment StoreEntitySet="MediaMaster">
+          <ScalarProperty Name="mediaID" ColumnName="mediaID" />
+          <ScalarProperty Name="mediafileName" ColumnName="mediafileName" />
+          <ScalarProperty Name="mediaOriginalName" ColumnName="mediaOriginalName" />
+          <ScalarProperty Name="mediaExtn" ColumnName="mediaExtn" />
+          <ScalarProperty Name="mediaSize" ColumnName="mediaSize" />
+          <ScalarProperty Name="IsDeleated" ColumnName="IsDeleated" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberRegistrations">
+      <EntityTypeMapping TypeName="Client_DA_Model.MemberRegistration">
+        <MappingFragment StoreEntitySet="MemberRegistration">
+          <ScalarProperty Name="memberRegistration_ID" ColumnName="memberRegistration_ID" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="MemeberEmail" ColumnName="MemeberEmail" />
+          <ScalarProperty Name="MemberPassword" ColumnName="MemberPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MembersMasters">
+      <EntityTypeMapping TypeName="Client_DA_Model.MembersMaster">
+        <MappingFragment StoreEntitySet="MembersMaster">
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+          <ScalarProperty Name="memberRegID" ColumnName="memberRegID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MemberDesignation" ColumnName="MemberDesignation" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="POCName" ColumnName="POCName" />
+          <ScalarProperty Name="POCPhoneOne" ColumnName="POCPhoneOne" />
+          <ScalarProperty Name="POCPhoneTwo" ColumnName="POCPhoneTwo" />
+          <ScalarProperty Name="TollFreeNumber" ColumnName="TollFreeNumber" />
+          <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Building" ColumnName="Building" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="MemberState" ColumnName="MemberState" />
+          <ScalarProperty Name="MemberCountry" ColumnName="MemberCountry" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="GSTIN" ColumnName="GSTIN" />
+          <ScalarProperty Name="PAN" ColumnName="PAN" />
+          <ScalarProperty Name="MemberTAN" ColumnName="MemberTAN" />
+          <ScalarProperty Name="Profile" ColumnName="Profile" />
+          <ScalarProperty Name="EnquiryEmail" ColumnName="EnquiryEmail" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="ActivePlanType" ColumnName="ActivePlanType" />
+          <ScalarProperty Name="MicroCategory" ColumnName="MicroCategory" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="MetaKeyword" ColumnName="MetaKeyword" />
+          <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+          <ScalarProperty Name="ServiceProviderType" ColumnName="ServiceProviderType" />
+          <ScalarProperty Name="TurnOver" ColumnName="TurnOver" />
+          <ScalarProperty Name="BusinessStatus" ColumnName="BusinessStatus" />
+          <ScalarProperty Name="Employee" ColumnName="Employee" />
+          <ScalarProperty Name="LogoMediaId" ColumnName="LogoMediaId" />
+          <ScalarProperty Name="BannerImageID" ColumnName="BannerImageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MicroCategories">
+      <EntityTypeMapping TypeName="Client_DA_Model.MicroCategory">
+        <MappingFragment StoreEntitySet="MicroCategory">
+          <ScalarProperty Name="MicroCat_ID" ColumnName="MicroCat_ID" />
+          <ScalarProperty Name="SubCat_ID" ColumnName="SubCat_ID" />
+          <ScalarProperty Name="MicroCatName" ColumnName="MicroCatName" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="MetaKeyword" ColumnName="MetaKeyword" />
+          <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductServiceMasters">
+      <EntityTypeMapping TypeName="Client_DA_Model.ProductServiceMaster">
+        <MappingFragment StoreEntitySet="ProductServiceMaster">
+          <ScalarProperty Name="PS_ID" ColumnName="PS_ID" />
+          <ScalarProperty Name="Ps_Name" ColumnName="Ps_Name" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="PsDescription" ColumnName="PsDescription" />
+          <ScalarProperty Name="AboutPS" ColumnName="AboutPS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubCategoryManagers">
+      <EntityTypeMapping TypeName="Client_DA_Model.SubCategoryManager">
+        <MappingFragment StoreEntitySet="SubCategoryManager">
+          <ScalarProperty Name="SubCat_ID" ColumnName="SubCat_ID" />
+          <ScalarProperty Name="Cat_ID" ColumnName="Cat_ID" />
+          <ScalarProperty Name="SubCatName" ColumnName="SubCatName" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="MetaKeywork" ColumnName="MetaKeywork" />
+          <ScalarProperty Name="MedaDescription" ColumnName="MedaDescription" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VisiterMasters">
+      <EntityTypeMapping TypeName="Client_DA_Model.VisiterMaster">
+        <MappingFragment StoreEntitySet="VisiterMaster">
+          <ScalarProperty Name="Visiter_ID" ColumnName="Visiter_ID" />
+          <ScalarProperty Name="VisiterName" ColumnName="VisiterName" />
+          <ScalarProperty Name="VisitorEmail" ColumnName="VisitorEmail" />
+          <ScalarProperty Name="VisitorPhone" ColumnName="VisitorPhone" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -74,6 +74,7 @@
     <Compile Include="adminLoginBl.cs" />
     <Compile Include="Admin_BLL.cs" />
     <Compile Include="categoryManagementBLL.cs" />
+    <Compile Include="ClientRegistrationBLL.cs" />
     <Compile Include="mediaManagementBLL.cs" />
     <Compile Include="microCategoryManagementBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

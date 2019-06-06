@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Client_DA_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CategoryMaster">
+    <Key>
+      <PropertyRef Name="categoryId" />
+    </Key>
+    <Property Name="categoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoryName" Type="varchar" MaxLength="64" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsSelected" Type="bit" />
+    <Property Name="mediaId" Type="int" />
+    <Property Name="pageTitle" Type="varchar" MaxLength="128" />
+    <Property Name="metaKeyword" Type="varchar" MaxLength="512" />
+    <Property Name="metaDescription" Type="varchar" MaxLength="256" />
+    <Property Name="createDate" Type="datetime" />
+    <Property Name="createdBy" Type="int" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="EnquiryMaster">
+    <Key>
+      <PropertyRef Name="Lead_ID" />
+    </Key>
+    <Property Name="Lead_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeadDate" Type="datetime" />
+    <Property Name="SendBy" Type="int" />
+    <Property Name="SendTo" Type="int" />
+    <Property Name="EnquiryType" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="LeadDescription" Type="varchar" MaxLength="256" />
+    <Property Name="SenderName" Type="varchar" MaxLength="128" />
+    <Property Name="SenderPhone" Type="varchar" MaxLength="16" />
+    <Property Name="SenderEmail" Type="varchar" MaxLength="64" />
+    <Property Name="SenderDescription" Type="varchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="MediaMaster">
+    <Key>
+      <PropertyRef Name="mediaID" />
+    </Key>
+    <Property Name="mediaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mediafileName" Type="varchar" MaxLength="64" />
+    <Property Name="mediaOriginalName" Type="varchar" MaxLength="256" />
+    <Property Name="mediaExtn" Type="varchar" MaxLength="8" />
+    <Property Name="mediaSize" Type="int" />
+    <Property Name="IsDeleated" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="MemberRegistration">
+    <Key>
+      <PropertyRef Name="memberRegistration_ID" />
+    </Key>
+    <Property Name="memberRegistration_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberName" Type="varchar" MaxLength="128" />
+    <Property Name="MemeberEmail" Type="varchar" MaxLength="64" />
+    <Property Name="MemberPassword" Type="varchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="MembersMaster">
+    <Key>
+      <PropertyRef Name="Member_ID" />
+    </Key>
+    <Property Name="Member_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="memberRegID" Type="int" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="128" />
+    <Property Name="MemberDesignation" Type="varchar" MaxLength="128" />
+    <Property Name="DisplayName" Type="varchar" MaxLength="128" />
+    <Property Name="POCName" Type="varchar" MaxLength="128" />
+    <Property Name="POCPhoneOne" Type="varchar" MaxLength="16" />
+    <Property Name="POCPhoneTwo" Type="varchar" MaxLength="16" />
+    <Property Name="TollFreeNumber" Type="varchar" MaxLength="20" />
+    <Property Name="FaxNo" Type="varchar" MaxLength="20" />
+    <Property Name="Location" Type="varchar" MaxLength="20" />
+    <Property Name="Building" Type="varchar" MaxLength="20" />
+    <Property Name="Street" Type="varchar" MaxLength="20" />
+    <Property Name="Landmark" Type="varchar" MaxLength="20" />
+    <Property Name="City" Type="varchar" MaxLength="20" />
+    <Property Name="PinCode" Type="varchar" MaxLength="16" />
+    <Property Name="MemberState" Type="varchar" MaxLength="20" />
+    <Property Name="MemberCountry" Type="varchar" MaxLength="20" />
+    <Property Name="Website" Type="varchar" MaxLength="20" />
+    <Property Name="GSTIN" Type="varchar" MaxLength="50" />
+    <Property Name="PAN" Type="varchar" MaxLength="20" />
+    <Property Name="MemberTAN" Type="varchar" MaxLength="30" />
+    <Property Name="Profile" Type="varchar(max)" />
+    <Property Name="EnquiryEmail" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="IsApproved" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="ActivePlanType" Type="varchar" MaxLength="20" />
+    <Property Name="MicroCategory" Type="int" />
+    <Property Name="PageTitle" Type="varchar" MaxLength="128" />
+    <Property Name="MetaKeyword" Type="varchar" MaxLength="512" />
+    <Property Name="MetaDescription" Type="varchar" MaxLength="256" />
+    <Property Name="ServiceProviderType" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="TurnOver" Type="varchar" MaxLength="256" />
+    <Property Name="BusinessStatus" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="Employee" Type="varchar" MaxLength="128" />
+    <Property Name="LogoMediaId" Type="int" />
+    <Property Name="BannerImageID" Type="int" />
+  </EntityType>
+  <EntityType Name="MicroCategory">
+    <Key>
+      <PropertyRef Name="MicroCat_ID" />
+    </Key>
+    <Property Name="MicroCat_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubCat_ID" Type="int" />
+    <Property Name="MicroCatName" Type="varchar" MaxLength="64" />
+    <Property Name="PageTitle" Type="varchar" MaxLength="128" />
+    <Property Name="MetaKeyword" Type="varchar" MaxLength="512" />
+    <Property Name="MetaDescription" Type="varchar" MaxLength="256" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductServiceMaster">
+    <Key>
+      <PropertyRef Name="PS_ID" />
+    </Key>
+    <Property Name="PS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ps_Name" Type="varchar" MaxLength="128" />
+    <Property Name="ImageID" Type="int" />
+    <Property Name="MemberID" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="UpdateDate" Type="date" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="PsDescription" Type="varchar" MaxLength="256" />
+    <Property Name="AboutPS" Type="varchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="SubCategoryManager">
+    <Key>
+      <PropertyRef Name="SubCat_ID" />
+    </Key>
+    <Property Name="SubCat_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cat_ID" Type="int" />
+    <Property Name="SubCatName" Type="varchar" MaxLength="64" />
+    <Property Name="PageTitle" Type="varchar" MaxLength="128" />
+    <Property Name="MetaKeywork" Type="varchar" MaxLength="512" />
+    <Property Name="MedaDescription" Type="varchar" MaxLength="256" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="VisiterMaster">
+    <Key>
+      <PropertyRef Name="Visiter_ID" />
+    </Key>
+    <Property Name="Visiter_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VisiterName" Type="varchar" MaxLength="64" />
+    <Property Name="VisitorEmail" Type="varchar" MaxLength="64" />
+    <Property Name="VisitorPhone" Type="varchar" MaxLength="16" />
+    <Property Name="RegisterDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__MembersMa__membe__047AA831">
+    <End Role="MemberRegistration" Type="Self.MemberRegistration" Multiplicity="0..1" />
+    <End Role="MembersMaster" Type="Self.MembersMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MemberRegistration">
+        <PropertyRef Name="memberRegistration_ID" />
+      </Principal>
+      <Dependent Role="MembersMaster">
+        <PropertyRef Name="memberRegID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MicroCate__SubCa__286302EC">
+    <End Role="SubCategoryManager" Type="Self.SubCategoryManager" Multiplicity="0..1" />
+    <End Role="MicroCategory" Type="Self.MicroCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategoryManager">
+        <PropertyRef Name="SubCat_ID" />
+      </Principal>
+      <Dependent Role="MicroCategory">
+        <PropertyRef Name="SubCat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SubCatego__Cat_I__25869641">
+    <End Role="CategoryMaster" Type="Self.CategoryMaster" Multiplicity="0..1" />
+    <End Role="SubCategoryManager" Type="Self.SubCategoryManager" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMaster">
+        <PropertyRef Name="categoryId" />
+      </Principal>
+      <Dependent Role="SubCategoryManager">
+        <PropertyRef Name="Cat_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Client_DA_ModelStoreContainer">
+    <EntitySet Name="CategoryMaster" EntityType="Self.CategoryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EnquiryMaster" EntityType="Self.EnquiryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MediaMaster" EntityType="Self.MediaMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MemberRegistration" EntityType="Self.MemberRegistration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MembersMaster" EntityType="Self.MembersMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MicroCategory" EntityType="Self.MicroCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductServiceMaster" EntityType="Self.ProductServiceMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubCategoryManager" EntityType="Self.SubCategoryManager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VisiterMaster" EntityType="Self.VisiterMaster" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__MembersMa__membe__047AA831" Association="Self.FK__MembersMa__membe__047AA831">
+      <End Role="MemberRegistration" EntitySet="MemberRegistration" />
+      <End Role="MembersMaster" EntitySet="MembersMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MicroCate__SubCa__286302EC" Association="Self.FK__MicroCate__SubCa__286302EC">
+      <End Role="SubCategoryManager" EntitySet="SubCategoryManager" />
+      <End Role="MicroCategory" EntitySet="MicroCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SubCatego__Cat_I__25869641" Association="Self.FK__SubCatego__Cat_I__25869641">
+      <End Role="CategoryMaster" EntitySet="CategoryMaster" />
+      <End Role="SubCategoryManager" EntitySet="SubCategoryManager" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

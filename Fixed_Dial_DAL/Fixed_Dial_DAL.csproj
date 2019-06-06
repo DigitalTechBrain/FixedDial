@@ -81,6 +81,7 @@
     <Compile Include="adminIdDAL.cs" />
     <Compile Include="adminLogin.cs" />
     <Compile Include="categoryManagementDAL.cs" />
+    <Compile Include="ClientRegistrationDAL.cs" />
     <Compile Include="mediaManagementDAL.cs" />
     <Compile Include="microCategoryManagementDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

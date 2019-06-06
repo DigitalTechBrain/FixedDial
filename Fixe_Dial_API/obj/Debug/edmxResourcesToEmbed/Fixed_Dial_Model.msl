@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Fixed_Dial_ModelStoreContainer" CdmEntityContainer="Fixed_Dial_Entities_Con">
+    <EntitySetMapping Name="MembersMasters">
+      <EntityTypeMapping TypeName="Fixed_Dial_Model.MembersMaster">
+        <MappingFragment StoreEntitySet="MembersMaster">
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="MemberDesignation" ColumnName="MemberDesignation" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="POCName" ColumnName="POCName" />
+          <ScalarProperty Name="POCPhoneOne" ColumnName="POCPhoneOne" />
+          <ScalarProperty Name="POCPhoneTwo" ColumnName="POCPhoneTwo" />
+          <ScalarProperty Name="TollFreeNumber" ColumnName="TollFreeNumber" />
+          <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+          <ScalarProperty Name="MemeberEmail" ColumnName="MemeberEmail" />
+          <ScalarProperty Name="MemberPassword" ColumnName="MemberPassword" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Building" ColumnName="Building" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="MemberState" ColumnName="MemberState" />
+          <ScalarProperty Name="MemberCountry" ColumnName="MemberCountry" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="GSTIN" ColumnName="GSTIN" />
+          <ScalarProperty Name="PAN" ColumnName="PAN" />
+          <ScalarProperty Name="MemberTAN" ColumnName="MemberTAN" />
+          <ScalarProperty Name="Profile" ColumnName="Profile" />
+          <ScalarProperty Name="EnquiryEmail" ColumnName="EnquiryEmail" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="ActivePlanType" ColumnName="ActivePlanType" />
+          <ScalarProperty Name="MicroCategory" ColumnName="MicroCategory" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="MetaKeyword" ColumnName="MetaKeyword" />
+          <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+          <ScalarProperty Name="ServiceProviderType" ColumnName="ServiceProviderType" />
+          <ScalarProperty Name="TurnOver" ColumnName="TurnOver" />
+          <ScalarProperty Name="BusinessStatus" ColumnName="BusinessStatus" />
+          <ScalarProperty Name="Employee" ColumnName="Employee" />
+          <ScalarProperty Name="LogoMediaId" ColumnName="LogoMediaId" />
+          <ScalarProperty Name="BannerImageID" ColumnName="BannerImageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
