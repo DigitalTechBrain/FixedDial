@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b3ed8b5e7c914889966e15ff638cdd26" Name="Diagram1">
+        <EntityTypeShape EntityType="Fixed_Dial_Model.CategoryMaster" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Fixed_Dial_Model.EnquiryMaster" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Fixed_Dial_Model.MediaMaster" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Fixed_Dial_Model.MemberRegistration" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="Fixed_Dial_Model.MembersMaster" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Fixed_Dial_Model.MicroCategory" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Fixed_Dial_Model.ProductServiceMaster" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Fixed_Dial_Model.SubCategoryManager" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Fixed_Dial_Model.VisiterMaster" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Fixed_Dial_Model.FK__SubCatego__Cat_I__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="Fixed_Dial_Model.FK__MembersMa__membe__047AA831" ManuallyRouted="false" />
+        <AssociationConnector Association="Fixed_Dial_Model.FK__MicroCate__SubCa__286302EC" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
