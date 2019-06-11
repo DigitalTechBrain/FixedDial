@@ -331,8 +331,22 @@ MemeberEmail varchar(64),
 MemberPassword varchar(64)
 )
 
+create procedure MemberAuthenticationPro
+(
+@MemeberEmail varchar(64),
+@MemberPassword varchar(64)
+)
+As
+Begin
+select memberRegistration_ID from MemberRegistration where MemeberEmail = @MemeberEmail  and MemberPassword = @MemberPassword
+End
+
+
+
 insert into MemberRegistration
 values ('Jack','Jack@jack.com','1234')
+
+delete from MemberRegistration
 
 select * from MemberRegistration
 
